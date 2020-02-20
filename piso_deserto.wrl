@@ -1,0 +1,19 @@
+#VRML V2.0 utf8
+
+# feito por Rafael de Brito
+
+Transform {
+	rotation 1 0  0 1.57
+	children [
+		Shape {
+			geometry Box {
+				size 30 30 0.01
+			} appearance Appearance {
+				texture	ImageTexture {
+					url	"areia_text.jpg"
+				}
+			}
+		}
+
+	]
+}

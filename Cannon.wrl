@@ -1,0 +1,143 @@
+#VRML V2.0 utf8
+
+Background { skyColor 0 0 1 }
+
+Viewpoint {
+	description "Visão lateral"
+	orientation 0 1 0 1.57
+	position 50 15 -30
+}
+
+Viewpoint {
+	description "Visão de tras"
+	position 0 0 20
+}
+
+# canhão.
+Transform {
+	children [
+		DEF CANNON Transform {
+			children [
+				Inline { url "CannonBody2.wrl" }
+				DEF CANNONANGLE OrientationInterpolator {
+					key [0 .25 .5 .75 1]
+					keyValue [1 0 0 1.570, 1 0 0 1.046, 1 0 0 .785, 1 0 0 .523, 1 0 0 .314]
+				}
+			]
+		}
+		
+		# sensor.
+		DEF TSENSOR TouchSensor {}
+		
+		# bala do canhão.
+		DEF BALL Transform {
+			translation 0 1 -1
+			children [
+				Shape {
+					appearance Appearance {
+						material Material { diffuseColor .2 .2 .2 }
+					}
+					geometry Sphere { radius .25 }
+				}
+			]
+		}
+	]
+}
+
+# controles de ângulo e força.
+Transform {
+	translation 4 0 0
+# 	translation 0 8 -2
+# 	rotation 0 0 -1 .785
+	children [
+		Transform {
+			scale 1 .5 1
+			children [
+				Transform {
+					translation 1 0 -1
+					children [
+						DEF INCPOWERBTN TouchSensor {}
+						DEF BUTTON Shape {
+							appearance Appearance {
+								material Material { diffuseColor .5 .5 .5 }
+							}
+							geometry Box { size 1 1 1 }
+						}
+					]
+				}
+				
+				Transform {
+					translation 1 0 1
+					children [
+						DEF DECPOWERBTN TouchSensor {}
+						USE BUTTON
+					]
+				}
+				
+				Transform {
+					translation -1 0 -1
+					children [
+						DEF INCANGLEBTN TouchSensor {}
+						USE BUTTON
+					]
+				}
+				
+				Transform {
+					translation -1 0 1
+					children [
+						DEF DECANGLEBTN TouchSensor {}
+						USE BUTTON
+					]
+				}
+				
+				DEF MARK Transform {
+					translation 2 0 0
+					children [
+						Shape {
+							appearance Appearance {
+								material Material { diffuseColor .5 .5 .5 }
+							}
+							geometry Cylinder {
+								height 20
+								radius .25
+							}
+						}
+						DEF MARKPOS PositionInterpolator {
+							key [0 .25 .5 .75 1]
+							keyValue [2 -10 0, 2 -5 0, 2 0 0, 2 5 0, 2 10 0]
+						}
+					]
+				}
+			]
+		}
+	]
+}
+
+DEF TIMER TimeSensor {
+	cycleInterval 1
+}
+
+DEF CANNONCTRL Script {
+	url "Controller.js"
+	eventIn SFFloat set_fraction
+	eventIn SFBool set_incpower
+	eventIn SFBool set_decpower
+	eventIn SFBool set_incangle
+	eventIn SFBool set_decangle
+	eventOut SFVec3f pos_changed
+	eventOut SFFloat power_fraction_changed
+	eventOut SFFloat angle_fraction_changed
+}
+
+ROUTE TSENSOR.touchTime TO TIMER.startTime
+ROUTE TIMER.fraction_changed TO CANNONCTRL.set_fraction
+ROUTE CANNONCTRL.pos_changed TO BALL.set_translation
+
+ROUTE INCPOWERBTN.isActive TO CANNONCTRL.set_incpower
+ROUTE DECPOWERBTN.isActive TO CANNONCTRL.set_decpower
+ROUTE CANNONCTRL.power_fraction_changed TO MARKPOS.set_fraction
+ROUTE MARKPOS.value_changed TO MARK.set_translation
+ROUTE INCANGLEBTN.isActive TO CANNONCTRL.set_incangle
+ROUTE DECANGLEBTN.isActive TO CANNONCTRL.set_decangle
+ROUTE CANNONCTRL.angle_fraction_changed TO CANNONANGLE.set_fraction
+ROUTE CANNONANGLE.value_changed TO CANNON.set_rotation

@@ -1,0 +1,98 @@
+#VRML V2.0 utf8
+
+DEF	telhado  Transform {
+	rotation 1 0 0 1.57
+	children [
+	  Shape {
+			geometry Cylinder {
+			  bottom FALSE
+			  top FALSE
+			  radius 3.0
+			  height 12.0
+		  } appearance Appearance {
+			  texture ImageTexture {
+				 url "telhado_text.jpg"
+			  }
+			  material Material {
+				  diffuseColor .57 .58 .58
+				  specularColor .67 .46 .44
+				  ambientIntensity .137
+				  shininess .17
+			  }
+		  }
+	}
+	]
+}
+
+DEF	frente Transform {
+	translation	0 0 -6
+	rotation 1 0 0 1.57
+	children [
+		Shape	{
+			geometry Cylinder	{
+			   bottom TRUE
+			   top TRUE
+			   radius 3.0
+			   height 0.10
+		   } appearance Appearance	{
+			   material	Material {
+				   diffuseColor .11 .55 .09
+				   specularColor .12 .06 .06
+				   ambientIntensity .0633
+				   shininess .09
+			   }
+		   }
+		}
+	]
+}
+
+Transform {
+   translation 0 0 12
+   children	[
+	 USE frente
+   ]
+}
+
+
+DEF	paredes Transform {
+	translation	0 -3 0
+	children [
+		Shape {
+			geometry Box {
+			  size 6 6 12.2
+			}
+			appearance Appearance {
+				material Material {
+					diffuseColor .11 .55 .09
+					specularColor .12 .06 .06
+					ambientIntensity .0633
+					shininess .09
+				}
+			}
+
+		}
+	]
+}
+
+DEF	portao Transform {
+	translation	0 -4.5 6
+	children [
+		Shape	{
+			geometry Box {
+			  size 3 3 0.4
+			}
+			appearance Appearance {
+				material Material {
+					diffuseColor .475 .196 .0902
+					specularColor .78 .69 .4
+					ambientIntensity .050
+					shininess .278
+				}
+			}
+
+		}
+	]
+}
+     
+
+	

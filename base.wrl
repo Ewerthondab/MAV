@@ -1,0 +1,351 @@
+#VRML V2.0 utf8
+
+
+Transform {
+	translation	0 2 0
+	scale 3 3 3
+	children [
+		Inline {
+			url "piso.wrl"
+		}
+
+	]
+}
+
+
+
+DEF	galpao0 Transform {
+	translation	0 2 -70
+	children [
+		Inline {
+		   url "galpao.wrl"
+		}
+	]
+}
+
+DEF	galpao1	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao0
+	]
+}
+
+DEF	galpao2	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao1
+	]
+}
+
+DEF	galpao3	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao0
+	]
+}
+
+DEF	galpao4	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao3
+	]
+}
+
+
+DEF	galpao5 Transform {
+	rotation 0 1 0 3.14
+	translation	0 2 70
+	children [
+		Inline {
+		   url "galpao.wrl"
+		}
+	]
+}
+
+DEF	galpao6	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao5
+	]
+}
+
+DEF	galpao7	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao6
+	]
+}
+
+DEF	galpao8	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao5
+	]
+}
+
+DEF	galpao9	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao8
+	]
+}
+
+
+DEF	galpao10 Transform {
+	translation	0 2 30
+	children [
+		Inline {
+		   url "galpao.wrl"
+		}
+	]
+}
+
+DEF	galpao11	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao10
+	]
+}
+
+DEF	galpao12	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao11
+	]
+}
+
+DEF	galpao13	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao10
+	]
+}
+
+DEF	galpao14	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao13
+	]
+}
+
+
+
+DEF	galpao15 Transform {
+	rotation 0 1 0 3.14
+	translation	0 2 -30
+	children [
+		Inline {
+		   url "galpao.wrl"
+		}
+	]
+}
+
+DEF	galpao16	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao15
+	]
+}
+
+DEF	galpao17	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao16
+	]
+}
+
+DEF	galpao18	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao15
+	]
+}
+
+DEF	galpao19	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao18
+	]
+}
+
+DEF	galpao20 Transform {
+	translation	-60 2 -70
+	children [
+		Inline {
+		   url "galpao.wrl"
+		}
+	]
+}
+
+DEF	galpao21	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao20
+	]
+}
+
+DEF	galpao22	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao21
+	]
+}
+
+DEF	galpao23	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao20
+	]
+}
+
+DEF	galpao24	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao23
+	]
+}
+
+DEF	galpao25 Transform {
+	rotation 0 1 0 3.14
+	translation	-60 2 70
+	children [
+		Inline {
+		   url "galpao.wrl"
+		}
+	]
+}
+
+DEF	galpao26	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao25
+	]
+}
+
+DEF	galpao27	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao26
+	]
+}
+
+DEF	galpao28	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao25
+	]
+}
+
+DEF	galpao29	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao28
+	]
+}
+
+DEF	galpao30 Transform {
+	translation	-60 2 30
+	children [
+		Inline {
+		   url "galpao.wrl"
+		}
+	]
+}
+
+DEF	galpao31	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao30
+	]
+}
+
+DEF	galpao32	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao31
+	]
+}
+
+DEF	galpao33	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao30
+	]
+}
+
+DEF	galpao34	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao33
+	]
+}
+
+
+
+DEF	galpao35 Transform {
+	rotation 0 1 0 3.14
+	translation	-60 2 -30
+	children [
+		Inline {
+		   url "galpao.wrl"
+		}
+	]
+}
+
+DEF	galpao36	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao35
+	]
+}
+
+DEF	galpao37	Transform {
+	translation	-7 0 0
+	children [
+	   USE galpao36
+	]
+}
+
+DEF	galpao38	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao35
+	]
+}
+
+DEF	galpao39	Transform {
+	translation	7 0 0
+	children [
+	   USE galpao38
+	]
+}
+
+DEF	torre1 Transform {
+	translation	95 1 60
+	children [
+		Inline {
+		  url "torre.wrl"
+		}
+	]
+}
+
+DEF	torre2 Transform {
+	translation	0 0 -90
+	children [
+		USE	torre1
+	]
+}
+
+DEF	torre3 Transform {
+	translation	-200 0 0
+	children [
+	   USE torre1
+	]
+}
+
+DEF	torre4 Transform {
+	translation	0 0 -90
+	children [
+	  USE torre3
+	]
+}

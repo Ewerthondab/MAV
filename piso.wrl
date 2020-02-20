@@ -1,0 +1,197 @@
+#VRML V2.0 utf8
+
+DEF	concreto Transform {
+	translation	0 -2 0
+	children [
+		 
+		Inline {
+			url "piso_base.wrl"
+		}
+		
+	]
+}
+
+Transform {
+	translation	-30 0 0
+	children [
+	  USE concreto
+	]
+}
+
+Transform {
+	translation	30 0 0
+	children [
+	  USE concreto
+	]
+}
+
+Transform {
+   translation 30 0 15
+   children	[
+	  USE concreto
+   ]
+}
+
+Transform {
+   translation -30 0 15
+   children	[
+	   USE concreto
+   ]
+}
+
+Transform {
+   translation 30 0 -15
+   children	[
+	  USE concreto
+   ]
+}
+
+Transform {
+   translation -30 0 -15
+   children	[
+	   USE concreto
+   ]
+}
+
+Transform {
+   translation 0 0 15
+   children	[
+	  USE concreto
+   ]
+}
+
+Transform {
+   translation 0 0 -15
+   children	[
+	   USE concreto
+   ]
+}
+
+
+# colocando areia na esquerda
+
+	DEF	areia Transform {
+		translation	-60.01 -2 0
+		children [
+		 
+			Inline {
+				url "piso_deserto.wrl"
+			}
+		
+		]
+	}
+
+	Transform {
+	   translation 0 0 45
+	   children	[
+		 USE areia
+	   ]
+	}
+
+	
+	Transform {
+	   translation 0 0 15
+	   children	[
+		  USE areia
+	   ]
+	}
+	
+	Transform {
+	   translation 0 0 -45
+	   children	[
+		 USE areia
+	   ]
+	}
+
+	Transform {
+		translation	0 0 -15
+		children [
+		   USE areia
+		]
+	}
+
+
+
+
+	Transform {
+	   translation 60 0 45
+	   children	[
+		 USE areia
+	   ]
+	}
+
+	Transform {
+	   translation 30 0 45
+	   children	[
+		 USE areia
+	   ]
+	}
+	
+	Transform {
+	   translation 60 0 -45
+	   children	[
+		 USE areia
+	   ]
+	}
+
+	Transform {
+	   translation 30 0 -45
+	   children	[
+		 USE areia
+	   ]
+	}
+
+	Transform {
+	   translation 90 0 45
+	   children	[
+		 USE areia
+	   ]
+	}
+
+	Transform {
+	   translation 90 0 -45
+	   children	[
+		 USE areia
+	   ]
+	}
+
+	
+	# direita
+	Transform {
+		translation	120 0 0
+		children [
+		   USE areia
+		]
+	}
+
+	Transform {
+		translation	120 0 -15
+		children [
+		   USE areia
+		]
+	}
+
+
+	Transform {
+		translation	120 0 15
+		children [
+		   USE areia
+		]
+	}
+
+	Transform {
+		translation	120 0 45
+		children [
+		   USE areia
+		]
+	}
+	
+	Transform {
+		translation	120 0 -45
+		children [
+		   USE areia
+		]
+	}
+
+
+
